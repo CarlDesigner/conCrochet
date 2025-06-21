@@ -1,0 +1,96 @@
+/* Importar Bootstrap 5 */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Variables de colores personalizados para ConCrochet */
+:root {
+  --primary-color: #8B4513;
+  --secondary-color: #DEB887;
+  --accent-color: #FF6B6B;
+  --text-color: #2C3E50;
+  --light-bg: #FFF8DC;
+  --white: #FFFFFF;
+}
+
+/* Estilos globales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+/* Header personalizado */
+.navbar-brand {
+  font-weight: bold;
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Hero section */
+.hero-section {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: var(--white);
+  padding: 4rem 0;
+}
+
+/* Cards de productos */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-card .card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Botones personalizados */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #6B3410;
+  border-color: #6B3410;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: #C19A6B;
+  border-color: #C19A6B;
+  color: var(--text-color);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+} 

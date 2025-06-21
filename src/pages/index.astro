@@ -1,16 +1,236 @@
 ---
+import Navbar from '../components/Navbar.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Footer from '../components/Footer.astro';
 
+// Datos de ejemplo de productos
+const featuredProducts = [
+  {
+    id: "1",
+    name: "Gatito Amigurumi",
+    price: 25.99,
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop",
+    description: "Adorable gatito hecho a mano con hilo suave y acrílico",
+    category: "Animales",
+    inStock: true
+  },
+  {
+    id: "2",
+    name: "Perrito Dormilón",
+    price: 29.99,
+    image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&h=300&fit=crop",
+    description: "Perrito durmiendo plácidamente, perfecto para regalo",
+    category: "Animales",
+    inStock: true
+  },
+  {
+    id: "3",
+    name: "Unicornio Mágico",
+    price: 35.99,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+    description: "Unicornio con colores vibrantes y detalles especiales",
+    category: "Personajes",
+    inStock: false
+  },
+  {
+    id: "4",
+    name: "Cactus Decorativo",
+    price: 18.99,
+    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=400&h=300&fit=crop",
+    description: "Cactus amigurumi para decorar tu hogar",
+    category: "Plantas",
+    inStock: true
+  }
+];
+
+const categories = [
+  { name: "Animales", icon: "fas fa-paw", count: 15 },
+  { name: "Personajes", icon: "fas fa-user", count: 8 },
+  { name: "Comida", icon: "fas fa-utensils", count: 12 },
+  { name: "Plantas", icon: "fas fa-seedling", count: 6 },
+  { name: "Personalizados", icon: "fas fa-magic", count: 5 }
+];
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>ConCrochet - Amigurumis Hechos con Amor</title>
+		<meta name="description" content="Tienda de amigurumis únicos y especiales hechos a mano con los mejores materiales" />
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+		
+		<!-- Estilos globales -->
+		<link rel="stylesheet" href="/src/styles/global.css">
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<!-- Navegación -->
+		<Navbar />
+
+		<!-- Hero Section -->
+		<section class="hero-section">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<h1 class="display-4 fw-bold mb-4">
+							Amigurumis Hechos con <i class="fas fa-heart text-danger"></i>
+						</h1>
+						<p class="lead mb-4">
+							Descubre nuestra colección única de amigurumis hechos a mano. 
+							Cada pieza está creada con amor y dedicación para traer alegría a tu vida.
+						</p>
+						<div class="d-flex gap-3">
+							<a href="/productos" class="btn btn-light btn-lg">
+								<i class="fas fa-shopping-bag me-2"></i>
+								Ver Productos
+							</a>
+							<a href="/categorias" class="btn btn-outline-light btn-lg">
+								<i class="fas fa-th-large me-2"></i>
+								Explorar Categorías
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-6 text-center">
+						<img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop" 
+							 alt="Amigurumis" class="img-fluid rounded shadow">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Categorías -->
+		<section class="py-5">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold">Nuestras Categorías</h2>
+					<p class="text-muted">Encuentra el amigurumi perfecto para ti</p>
+				</div>
+				<div class="row">
+					{categories.map(category => (
+						<div class="col-lg-2 col-md-4 col-6 mb-4">
+							<div class="card text-center h-100 border-0 shadow-sm">
+								<div class="card-body">
+									<i class={`${category.icon} fa-3x text-primary mb-3`}></i>
+									<h6 class="card-title">{category.name}</h6>
+									<p class="text-muted small">{category.count} productos</p>
+									<a href={`/categorias/${category.name.toLowerCase()}`} class="btn btn-outline-primary btn-sm">
+										Ver más
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Productos Destacados -->
+		<section class="py-5 bg-light">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold">Productos Destacados</h2>
+					<p class="text-muted">Nuestros amigurumis más populares</p>
+				</div>
+				<div class="row">
+					{featuredProducts.map(product => (
+						<ProductCard {...product} />
+					))}
+				</div>
+				<div class="text-center mt-4">
+					<a href="/productos" class="btn btn-primary btn-lg">
+						Ver Todos los Productos
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Características -->
+		<section class="py-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 mb-4">
+						<div class="text-center">
+							<i class="fas fa-shipping-fast fa-3x text-primary mb-3"></i>
+							<h5>Envío Rápido</h5>
+							<p class="text-muted">Envío gratuito en pedidos superiores a $50</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<div class="text-center">
+							<i class="fas fa-hand-holding-heart fa-3x text-primary mb-3"></i>
+							<h5>Hecho a Mano</h5>
+							<p class="text-muted">Cada pieza es única y hecha con amor</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<div class="text-center">
+							<i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+							<h5>Calidad Garantizada</h5>
+							<p class="text-muted">Materiales de la mejor calidad</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 mb-4">
+						<div class="text-center">
+							<i class="fas fa-headset fa-3x text-primary mb-3"></i>
+							<h5>Soporte 24/7</h5>
+							<p class="text-muted">Estamos aquí para ayudarte</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Newsletter -->
+		<section class="py-5 bg-primary text-white">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<h3 class="mb-3">¡Únete a Nuestra Comunidad!</h3>
+						<p class="mb-4">Recibe ofertas especiales y novedades sobre nuevos amigurumis</p>
+						<div class="input-group">
+							<input type="email" class="form-control" placeholder="Tu dirección de email">
+							<button class="btn btn-light" type="button">
+								Suscribirse
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<Footer />
+
+		<!-- Toasts para notificaciones -->
+		<div class="toast-container position-fixed bottom-0 end-0 p-3">
+			<div id="cartToast" class="toast" role="alert">
+				<div class="toast-header">
+					<i class="fas fa-shopping-cart text-primary me-2"></i>
+					<strong class="me-auto">Carrito</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+				</div>
+				<div class="toast-body">
+					¡Producto agregado al carrito exitosamente!
+				</div>
+			</div>
+			
+			<div id="wishlistToast" class="toast" role="alert">
+				<div class="toast-header">
+					<i class="fas fa-heart text-danger me-2"></i>
+					<strong class="me-auto">Favoritos</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+				</div>
+				<div class="toast-body">
+					¡Producto agregado a favoritos!
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts de Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
