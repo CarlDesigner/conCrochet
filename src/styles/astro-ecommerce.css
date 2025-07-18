@@ -1,0 +1,51 @@
+.navbar {
+    --bs-navbar-padding-x: .6rem;
+    --bs-navbar-padding-y: .5rem;
+    --bs-navbar-color: #1e293b;
+    --bs-navbar-hover-color: rgba(30, 41, 59, .7);
+    --bs-navbar-disabled-color: rgba(30, 41, 59, .3);
+    --bs-navbar-active-color: rgba(30, 41, 59, .9);
+    --bs-navbar-brand-padding-y: .59375rem;
+    --bs-navbar-brand-margin-end: 1rem;
+    --bs-navbar-brand-font-size: .875rem;
+    --bs-navbar-brand-color: rgba(30, 41, 59, .9);
+    --bs-navbar-brand-hover-color: rgba(30, 41, 59, .9);
+    --bs-navbar-nav-link-padding-x: .5rem;
+    --bs-navbar-toggler-padding-y: .25rem;
+    --bs-navbar-toggler-padding-x: .75rem;
+    --bs-navbar-toggler-font-size: 1.125rem;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231e293b' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    --bs-navbar-toggler-border-color: rgba(30, 41, 59, .1);
+    --bs-navbar-toggler-border-radius: .375rem;
+    --bs-navbar-toggler-focus-width: .2rem;
+    --bs-navbar-toggler-transition: box-shadow .15s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
+
+.blur {
+    -webkit-backdrop-filter: blur(27.2px);
+    backdrop-filter: blur(27.2px);
+}
+.border-radius-sm {
+    border-radius: .25rem;
+}
+.z-index-3 {
+    z-index: 3 !important;
+}
+.end-0 {
+    right: 0 !important;
+}
+.start-0 {
+    left: 0 !important;
+}
+.top-0 {
+    top: 0 !important;
+}
+.position-sticky {
+    position: sticky !important;
+}
