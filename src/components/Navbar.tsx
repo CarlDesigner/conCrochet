@@ -8,11 +8,7 @@ const Navbar = () => {
 
 //Evaluar si mejor lo hacemos con el collapse de bootstra´
 //ya que con useState cambiamos ambos estados
-  const toggleMenuOne = () => {
-    setVisible((prev) => (prev? 0 : 1));
-            console.log("RR")
-
-  };
+  
 
 
   const toggleMenu = () => {
@@ -57,22 +53,22 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item dropdown">
-  <a
-    className="nav-link text-dark dropdown-toggle fw-semibold d-flex align-items-center me-2"
-    href="#"
-    id="pagesExample"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    Pages
-  </a>
-  <ul className="dropdown-menu" aria-labelledby="pagesExample">
-    <li><a className="dropdown-item" href="/astro-ecommerce/landing/">Landing Page</a></li>
-    <li><a className="dropdown-item" href="/astro-ecommerce/product/">Product Page</a></li>
-    <li><a className="dropdown-item" href="/astro-ecommerce/shopping-cart/">Shopping Cart</a></li>
-  </ul>
-</li>
+              <a
+                className="nav-link text-dark dropdown-toggle fw-semibold d-flex align-items-center me-2"
+                href="#"
+                id="pagesExample"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="pagesExample">
+                <li><a className="dropdown-item" href="/astro-ecommerce/landing/">Landing Page</a></li>
+                <li><a className="dropdown-item" href="/astro-ecommerce/product/">Product Page</a></li>
+                <li><a className="dropdown-item" href="/astro-ecommerce/shopping-cart/">Shopping Cart</a></li>
+              </ul>
+            </li>
             <li className="nav-item">
               <a className="nav-link text-dark fw-semibold d-flex align-items-center me-2" href="https://www.creative-tim.com/learning-lab/astro/overview/astro-ecommerce">
                 Documentation
