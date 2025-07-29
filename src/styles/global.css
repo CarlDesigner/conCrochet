@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+.btn-custom {
+  background-color: #140d0d;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #004be2;
+  color: #e01111;
+}
