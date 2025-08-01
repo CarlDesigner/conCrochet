@@ -12,70 +12,261 @@ export interface Props {}
       </p>
       <button class="bg-white text-gray-600 py-[12px] px-[10%] rounded font-semibold  hover:!bg-gray-300 transition">
         Explore New Collection
-      </button>
+      </button> 
     </div>
   </div>
+
+
 </section>
-<div class="max-w-screen-2xl   mx-auto my-12 px- 4 mb-8">
-  <div class="block text-center mb-12">
-    <h3 class="text-xl !font-bold mb-2 " >Shop by category</h3>
-    <a href="#" class="!text-gray-800 font-semibold !no-underline">
-      Browse all categories &gt;
-    </a>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-    
-    <div class="relative  bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-124 p-6 " style="background-image: url('https://picsum.photos/id/237/800/500') ; ">
-          <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+  <!-- SECCION DE CATEGORIAS -->
 
-      <p class="text-white font-bold mb-1 z-10">Pre-fall</p>
-      <h4 class="text-white font-extrabold z-10">Silk Dresses</h4>
-      <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
+
+
+<section class="mb-8 mt-[8%]">
+  <!-- Contenedor general con padding horizontal responsive -->
+  <div class="max-w-screen-2xl mx-auto px-[12%] md:!px-[10%] lg:!px-[6%]">
+
+    <!-- Título -->
+    <div class="text-center mb-12">
+      <h3 class="!text-[35px] !font-bold mb-2">Shop by category</h3>
+      <a href="#" class="!text-gray-800 font-semibold !no-underline">
+        Browse all categories &gt;
+      </a>
     </div>
-    
-    <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-124 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-                  <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
 
-      <p class="text-white font-bold mb-1 z-10">Designers</p>
-      <h4 class="text-white font-extrabold z-10">Suits</h4>
-      <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-    </div>
-    <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-124 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-      <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+    <!-- Grid de categorías -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-2 mb-12 ">
+      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
+        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+        <p class="text-white font-bold mb-1 z-10">Pre-fall</p>
+        <h4 class="text-white font-extrabold z-10">Silk Dresses</h4>
+        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
+      </div>
 
-      <p class="text-white font-bold mb-1 z-10">Summer</p>
-      <h4 class="text-white font-extrabold z-10">Festival</h4>
-      <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-    </div>
-    <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-124 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-                  <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
+        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+        <p class="text-white font-bold mb-1 z-10">Designers</p>
+        <h4 class="text-white font-extrabold z-10">Suits</h4>
+        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
+      </div>
 
-      <p class="text-white font-bold mb-1 z-10">Sale</p>
-      <h4 class="text-white font-extrabold z-10">Showroom</h4>
-      <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-    </div>
-  </div>
+      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
+        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+        <p class="text-white font-bold mb-1 z-10">Summer</p>
+        <h4 class="text-white font-extrabold z-10">Festival</h4>
+        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
+      </div>
 
-
-  <section class="mb-8">
-  <div class="relative py-10 bg-cover bg-center rounded-2xl" 
-       style="background-image:url('https://picsum.photos/id/237/600/600'); min-height:45vh;">
-    <div class="absolute inset-0 bg-black/60 rounded-2xl"></div>
-
-    <div class="relative flex justify-center pt-[5%]  h-full px-4 w-full">
-      <div class=" text-center  max-w-5xl w-full ">
-        <h1 class="text-white text-4xl !font-bold mb-4">Basic Starter Pack</h1>
-        <p class="text-white text-lg mb-6 text-[1.5rem] ">
-          The time is now for it to be okay to be great. People in this world shun people for being great.
-          For being a bright color. For standing out.
-        </p>
-        <button class="bg-white text-black font-semibold py-3 px-[6rem] !rounded-lg hover:bg-gray-200 transition">
-          Explore New Collection
-        </button>
+      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
+        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
+        <p class="text-white font-bold mb-1 z-10">Sale</p>
+        <h4 class="text-white font-extrabold z-10">Showroom</h4>
+        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
       </div>
     </div>
+
+    <!-- Sección Basic Starter Pack con el mismo padding horizontal -->
+    <div class="relative py-10 bg-cover bg-center rounded-2xl " 
+         style="background-image:url('https://picsum.photos/id/237/600/600'); min-height:45vh;">
+      <div class="absolute inset-0 bg-black/60 rounded-2xl"></div>
+
+      <div class="relative flex justify-center pt-[5%] h-full w-full">
+        <div class="text-center max-w-5xl w-full">
+          <h1 class="text-white text-4xl font-bold mb-4">Basic Starter Pack</h1>
+          <p class="text-white text-lg mb-6">
+            The time is now for it to be okay to be great. People in this world shun people for being great.
+            For being a bright color. For standing out.
+          </p>
+          <button class="bg-white text-gray-800 font-semibold py-3 px-[6rem] !rounded-lg hover:!bg-gray-200 transition">
+            Explore New Collection
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<div class="mn-5 mt-[10%]">
+  <div>
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="mb-3 !text-5xl !font-bold">Product Features</h2>
+      <p class="mb-5 text-gray-600 !text-xl m-[5%] lg-!m-0">Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-[10%]">
+
+      <!-- Left Column -->
+      <div class="lg:max-w-3xl lg:p-[5%] ">
+        <h4 class="mb-3 text-xl font-semibold">Product Description</h4>
+        <p class="mb-5 text-gray-600 px-auto text-xl">
+            rrrrrrrrrrrrrrrrrr has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex">
+            <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>
+            <p class=" text-gray-600 font-medium  text-xl">Oil is a primary source of energy for various sectors...</p>
+          </div>
+          <div class="flex">
+            <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>            
+            <p class=" text-gray-600 font-semibold  text-xl">Oil is highly versatile and used in the production of a wide range of products...</p>
+          </div>
+          <div class="flex">
+        <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>            
+        <p class=" text-gray-600 font-semibold  text-xl">Oil is a crucial source of petrochemicals...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Images) -->
+      <div class="lg:w-3/4 space-y-4">
+        <img class="w-full rounded-xl object-cover" src="https://picsum.photos/seed/picsum/800/400" alt="first_image" />
+        <div class="flex gap-4">
+          <img class="w-1/2 rounded-xl object-cover" src="https://picsum.photos/seed/picsum/200/300" alt="third_image" />
+          <img class="w-1/2 rounded-xl object-cover" src="https://picsum.photos/seed/picsum/200/300" alt="fourth_image" />
+        </div>
+    </div>
+  </div>
+    </div>
+
+
+    <!-- seccion segunda -->
+<div class="mt-[5%] mb-10">
+      <section class="lg:mx-[10%]">
+        <div class="mx-[10%]   rounded-t-2xl overflow-hidden min-h-[50vh] bg-cover bg-center bg-no-repeat relative" 
+         style="background-image: url('https://images.unsplash.com/photo-1519642918688-7e43b19245d8?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2676&amp;q=80');">
+
+            
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            
+            <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex justify-center items-center min-h-[50vh]">
+                <div class="flex flex-col items-center text-center max-w-3xl">
+                <h1 class="mb-4 font-bold text-3xl sm:text-4xl text-white">Exclusive Discounts for Members</h1>
+                <p class="mb-6 px-4 sm:px-8 text-white font-semibold text-base sm:text-lg">
+                    The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you.
+                </p>
+                <button class="flex items-center bg-white text-gray-900 text-sm font-semibold px-6 py-3 !rounded-md hover:!bg-gray-200 transition">
+                    <svg class="mr-2" width="15" height="15" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00002 3.4999C4.00002 2.34011 4.94023 1.3999 6.10002 1.3999C6.63788 1.3999 7.12849 1.6021 7.50002 1.93463C7.87158 1.6021 8.36214 1.3999 8.90002 1.3999C10.0599 1.3999 11 2.34011 11 3.4999C11 3.74535 10.9579 3.98096 10.8805 4.1999H11.7C12.4732 4.1999 13.1 4.8267 13.1 5.5999C13.1 6.3731 12.4732 6.9999 11.7 6.9999H8.20002V6.2999C8.20002 5.91331 7.88663 5.5999 7.50002 5.5999C7.11343 5.5999 6.80002 5.9133 6.80002 6.2999V6.9999H3.30002C2.52683 6.9999 1.90002 6.3731 1.90002 5.5999C1.90002 4.8267 2.52683 4.1999 3.30002 4.1999H4.11952C4.04213 3.98096 4.00002 3.74535 4.00002 3.4999ZM6.80002 4.1999V3.4999C6.80002 3.11331 6.48662 2.7999 6.10002 2.7999C5.71343 2.7999 5.40002 3.11331 5.40002 3.4999C5.40002 3.8865 5.71343 4.1999 6.10002 4.1999H6.80002ZM8.90002 4.1999C9.28663 4.1999 9.60003 3.8865 9.60003 3.4999C9.60003 3.11331 9.28663 2.7999 8.90002 2.7999C8.51341 2.7999 8.20002 3.11331 8.20002 3.4999V4.1999H8.90002Z" fill="black" />
+                    <path d="M6.79998 7.69995H2.59998V11.2C2.59998 11.9732 3.22678 12.6 3.99998 12.6H6.79998V7.69995Z" fill="black" />
+                    <path d="M8.20001 12.6H11C11.7732 12.6 12.4 11.9732 12.4 11.2V7.69995H8.20001V12.6Z" fill="black" />
+                    </svg>
+                    Get your code
+                </button>
+                </div>
+            </div>
+            </div>
+
+
+                <div class="">
+
+
+
+                    <!-- OPINIONES DE LOS CLIENTES  -->
+                    <div class="mx-[10%] max-w-3xl mt-10">
+                        <h3 class="!font-bold mt-4 mb-2 !text-4xl">Our customer’s opinion</h3>
+                    <p class="mb-5  max-w-3xl text-gray-600 !text-[1.2rem]">Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.</p>
+               
+                     </div>
+               
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+                        <div class="bg-white p-4 rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="bg-white border shadow-sm mb-4 rounded-lg p-4">
+                               <div class="w-full p-3 text-left">
+                                    <div class="flex items-center">
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> 
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-white w-[1rem] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="mt-4">We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment.</p>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-full relative mr-2">
+                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
+                                        </div>
+                                        <h6 class="mb-0">Alexa Liras</h6>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="border shadow-sm mb-4 rounded-lg bg-white">
+                                <div class="w-full p-3 text-left">
+                                <div class="flex items-center">
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="mt-4">There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="relative mr-2 w-8 h-8 rounded-full overflow-hidden">
+                                             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
+                                        </div>  
+                                        <h6 class="mb-0">Laurent Perrier</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border rounded shadow-sm mb-4 p-4 bg-white w-full">
+                                <div class="text-left p-3 w-full">
+                                    <div class="flex items-center">
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> 
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg class="text-white w-[1rem] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="mt-4">It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams.</p>
+                                    <div class="flex items-center">
+                                        <div class="relative mr-2 w-8 h-8 rounded-full overflow-hidden">
+                                             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
+                                        </div>
+                                        <h6 class="mb-0">Michael Levi</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                </div>
+            </section>
+    </div>
+    
+</div>
+
 
 </div>
 
