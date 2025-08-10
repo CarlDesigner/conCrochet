@@ -1,274 +1,592 @@
 ---
+import { Twitter, Facebook, Instagram, Youtube, MapPin, Clock, Send, PhoneOutgoing } from 'lucide-react';
+
 export interface Props {}
 ---
-<section class="mb-8 relative z-0">
-  <div class="flex justify-center items-center bg-cover bg-center min-h-[96vh]" style="background-image: url('../public/imagen-temporal.jpg')">
-    <div class="absolute inset-0 bg-black/80 pointer-events-none"></div>
-    <div class="relative z-10 max-w-3xl text-center flex flex-col items-center gap-8 px-4 ">
-      <h1 class="text-white font-bold !text-[3.5rem]">Collection is here</h1>
-      <p class="text-white text-lg">
-        The time is now for it to be okay to be great. People in this world 
-        shun people for being great. For being a bright color. For standing out.
-      </p>
-      <button class="bg-white text-gray-600 py-[12px] px-[10%] rounded font-semibold  hover:!bg-gray-300 transition">
-        Explore New Collection
-      </button> 
-    </div>
-  </div>
 
-
-</section>
-  <!-- SECCION DE CATEGORIAS -->
-
-
-
-<section class="mb-8 mt-[8%]">
-  <!-- Contenedor general con padding horizontal responsive -->
-  <div class="max-w-screen-2xl mx-auto px-[12%] md:!px-[10%] lg:!px-[6%]">
-
-    <!-- Título -->
-    <div class="text-center mb-12">
-      <h3 class="!text-[35px] !font-bold mb-2">Shop by category</h3>
-      <a href="#" class="!text-gray-800 font-semibold !no-underline">
-        Browse all categories &gt;
-      </a>
-    </div>
-
-    <!-- Grid de categorías -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-2 mb-12 ">
-      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
-        <p class="text-white font-bold mb-1 z-10">Pre-fall</p>
-        <h4 class="text-white font-extrabold z-10">Silk Dresses</h4>
-        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-      </div>
-
-      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
-        <p class="text-white font-bold mb-1 z-10">Designers</p>
-        <h4 class="text-white font-extrabold z-10">Suits</h4>
-        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-      </div>
-
-      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
-        <p class="text-white font-bold mb-1 z-10">Summer</p>
-        <h4 class="text-white font-extrabold z-10">Festival</h4>
-        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
-      </div>
-
-      <div class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-114 p-6" style="background-image: url('https://picsum.photos/id/237/800/500');">
-        <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
-        <p class="text-white font-bold mb-1 z-10">Sale</p>
-        <h4 class="text-white font-extrabold z-10">Showroom</h4>
-        <a href="#" class="text-white text-sm font-medium mt-2 hover:underline z-10">See products &gt;</a>
+<!-- Hero Section -->
+<main class="relative z-0">
+  <section class="pt-24 pb-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative flex justify-center items-center bg-cover bg-center rounded-2xl overflow-hidden h-[60vh]" style="background-image: url('../public/hero.webp')">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center px-4">
+          <div class="flex flex-col items-center gap-8 max-w-4xl mx-auto">
+            <h1 class="text-white font-bold text-4xl sm:text-5xl lg:text-6xl">ConCrochet Collection</h1>
+            <p class="text-white text-lg sm:text-xl max-w-2xl">
+              Descubre nuestra exclusiva colección de amigurumis hechos a mano con amor y dedicación. 
+              Cada pieza es única y especial.
+            </p>
+            <a href="/products" class="bg-white text-gray-600 py-3 px-8 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200">
+              Explorar Colección
+            </a> 
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Sección Basic Starter Pack con el mismo padding horizontal -->
-    <div class="relative py-10 bg-cover bg-center rounded-2xl " 
-         style="background-image:url('https://picsum.photos/id/237/600/600'); min-height:45vh;">
-      <div class="absolute inset-0 bg-black/60 rounded-2xl"></div>
+  <!-- Categories Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <header class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Explora Nuestras Categorías</h2>
+        <a href="/products" class="inline-flex items-center text-gray-800 font-semibold hover:text-blue-600 transition-all duration-300 group">
+          Ver todas las categorías 
+          <svg class="ml-1 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </header>
 
-      <div class="relative flex justify-center pt-[5%] h-full w-full">
-        <div class="text-center max-w-5xl w-full">
-          <h1 class="text-white text-4xl font-bold mb-4">Basic Starter Pack</h1>
-          <p class="text-white text-lg mb-6">
-            The time is now for it to be okay to be great. People in this world shun people for being great.
-            For being a bright color. For standing out.
+      <!-- Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('../public/cat1.webp');">
+          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+          <div class="relative z-10 text-center">
+            <p class="text-white font-bold mb-1">Nuevos</p>
+            <h3 class="text-white font-extrabold text-xl">Animalitos 🐻</h3>
+            <a href="/products?category=animals" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
+          </div>
+        </article>
+
+        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('../public/cat2.webp');">
+          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+          <div class="relative z-10 text-center">
+            <p class="text-white font-bold mb-1">Populares</p>
+            <h3 class="text-white font-extrabold text-xl">Plantitas 🌵</h3>
+            <a href="/products?category=plants" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
+          </div>
+        </article>
+
+        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('../public/cat3.webp');">
+          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+          <div class="relative z-10 text-center">
+            <p class="text-white font-bold mb-1">Especiales</p>
+            <h3 class="text-white font-extrabold text-xl">Anime y Fantasía ✨</h3>
+            <a href="/products?category=fantasy" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
+          </div>
+        </article>
+
+        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('../public/cat4.webp');">
+          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+          <div class="relative z-10 text-center">
+            <p class="text-white font-bold mb-1">Ofertas</p>
+            <h3 class="text-white font-extrabold text-xl">Descuentitos 🎁</h3>
+            <a href="/products?discount=true" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Featured Collection Banner -->
+      <section class="relative py-16 bg-cover bg-center rounded-2xl overflow-hidden" 
+               style="background-image:url('../public/hero2.webp'); min-height:400px;">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 flex justify-center items-center h-full">
+          <div class="text-center max-w-4xl px-4">
+            <h2 class="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Colección Especial de Temporada</h2>
+            <p class="text-white text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+              Descubre nuestros amigurumis más especiales y únicos, creados con técnicas artesanales 
+              y materiales de la más alta calidad.
+            </p>
+            <a href="/products?featured=true" class="bg-white text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-gray-200 transition-colors duration-200 inline-block">
+              Explorar Colección Especial
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Product Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="text-center max-w-4xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">¿Por qué elegir ConCrochet?</h2>
+        <p class="text-gray-600 text-lg sm:text-xl">
+          Cada amigurumi que creamos está hecho con amor, dedicación y los mejores materiales. 
+          Descubre lo que nos hace especiales.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Column - Features -->
+        <article class="space-y-8">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Características de nuestros productos</h3>
+            <p class="text-gray-600 text-lg mb-8">
+              Todos nuestros amigurumis están hechos a mano con hilos de alta calidad, 
+              garantizando durabilidad y suavidad en cada pieza única.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">100% Hecho a Mano</h4>
+                <p class="text-gray-600">Cada amigurumi es creado artesanalmente con técnicas tradicionales de crochet.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Materiales Premium</h4>
+                <p class="text-gray-600">Utilizamos hilos de algodón y acrílico de la más alta calidad, seguros y duraderos.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Diseños Únicos</h4>
+                <p class="text-gray-600">Cada diseño es original y creado con atención especial a los detalles y la personalidad.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Right Column - Images -->
+        <div class="space-y-6">
+          <img class="w-full rounded-xl object-cover h-80" src="../public/caract1.webp" alt="Proceso de creación de amigurumis" />
+          <div class="grid grid-cols-2 gap-4">
+            <img class="w-full rounded-xl object-cover h-48" src="../public/caract2.webp" alt="Detalle de materiales" />
+            <img class="w-full rounded-xl object-cover h-48" src="../public/caract3.webp" alt="Amigurumi terminado" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative py-16 bg-cover bg-center rounded-2xl overflow-hidden" 
+           style="background-image: url('../public/hero3.webp');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 flex justify-center items-center min-h-[400px]">
+          <div class="text-center max-w-4xl px-4">
+            <h2 class="text-white text-3xl sm:text-4xl font-bold mb-6">Únete a Nuestra Comunidad</h2>
+            <p class="text-white text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+              Forma parte de la familia ConCrochet y recibe descuentos exclusivos, 
+              tutoriales gratuitos y acceso anticipado a nuestras nuevas colecciones.
+            </p>
+            <a href="#newsletter" class="inline-flex items-center bg-white text-gray-900 text-sm font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition-colors duration-200">
+              <svg class="mr-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              </svg>
+              Obtener mi código
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="max-w-4xl mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
+        <p class="text-gray-600 text-lg">
+          La satisfacción de nuestros clientes es nuestra mayor recompensa. 
+          Lee las experiencias de quienes ya forman parte de la familia ConCrochet.
+        </p>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Review 1 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test1.webp" 
+                 alt="María González" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">María González</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 2 semanas</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Los amigurumis de ConCrochet son increíbles. La calidad es excepcional y cada detalle está perfectamente cuidado. Mi hija está enamorada de su unicornio. ¡Súper recomendado!
           </p>
-          <button class="bg-white text-gray-800 font-semibold py-3 px-[6rem] !rounded-lg hover:!bg-gray-200 transition">
-            Explore New Collection
+        </article>
+
+        <!-- Review 2 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test3.webp" 
+                 alt="Carlos Pérez" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">Carlos Pérez</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 1 mes</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Excelente servicio y productos de primera calidad. El envío fue rápido y el empaque muy cuidadoso. Definitivamente volveré a comprar. 5 estrellas merecidas.
+          </p>
+        </article>
+
+        <!-- Review 3 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test2.webp" 
+                 alt="Ana López" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">Ana López</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 3 semanas</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Me encanta la variedad de diseños y la atención personalizada. Pedí un amigurumi customizado y el resultado superó mis expectativas. ¡Altamente recomendado!
+          </p>
+        </article>
+
+        <!-- Review 4 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test5.webp" 
+                 alt="Carlos Méndez" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">Carlos Méndez</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 1 semana</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Excelente servicio y productos de primera calidad. Compré varios amigurumis para mis hijos y están encantados. La entrega fue súper rápida.
+          </p>
+        </article>
+
+        <!-- Review 5 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test6.webp" 
+                 alt="Isabella Torres" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">Isabella Torres</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 5 días</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            ¡Increíble trabajo artesanal! El detalle y la delicadeza en cada pieza es impresionante. Definitivamente volveré a comprar para futuros regalos.
+          </p>
+        </article>
+
+        <!-- Review 6 - Estilo Google -->
+        <article class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200">
+          <div class="flex items-start space-x-3 mb-3">
+            <img src="../public/test4.webp" 
+                 alt="Roberto Silva" 
+                 class="w-10 h-10 rounded-full object-cover"
+                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.1) brightness(1.05);">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between">
+                <h4 class="font-medium text-gray-900 text-sm truncate">Roberto Silva</h4>
+                <div class="flex items-center text-xs text-gray-500 ml-2">
+                  <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  Google
+                </div>
+              </div>
+              <div class="flex items-center mt-1">
+                <div class="flex text-yellow-400 mr-2">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                </div>
+                <span class="text-xs text-gray-500">hace 4 días</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Perfecta comunicación durante todo el proceso. Mi pedido llegó exactamente como lo esperaba y en el tiempo prometido. ¡Muy recomendable!
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-50 text-gray-900 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Con Crochet</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Creaciones únicas hechas a mano con amor y dedicación. Especializados en amigurumis, accesorios y decoración del hogar. Cada pieza es única y diseñada especialmente para ti.
+          </p>
+          <div class="flex space-x-4">
+            <!-- Social Media Icons -->
+            <a href="#" class="bg-white hover:bg-blue-600 hover:text-white border border-gray-200 p-3 rounded-full transition-colors duration-300 text-gray-600">
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a href="#" class="bg-white hover:bg-blue-600 hover:text-white border border-gray-200 p-3 rounded-full transition-colors duration-300 text-gray-600">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="#" class="bg-white hover:bg-blue-600 hover:text-white border border-gray-200 p-3 rounded-full transition-colors duration-300 text-gray-600">
+              <Youtube className="w-5 h-5" />
+            </a>
+            <a href="#" class="bg-white hover:bg-blue-600 hover:text-white border border-gray-200 p-3 rounded-full transition-colors duration-300 text-gray-600">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.40z"/>
+              <Instagram className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-6">Enlaces Rápidos</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Inicio</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Productos</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Sobre Nosotros</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Tutoriales</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Blog</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors duration-300">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-6">Contacto</h4>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <MapPin className="w-5 h-5 text-blue-600 mt-1" />
+              <div>
+                <p class="text-gray-600">Bogotá D.C., Colombia</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <PhoneOutgoing className="w-5 h-5 text-blue-600 mt-1" />
+              <div>
+                <p class="text-gray-600">+57 300 123 4567</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <Send className="w-5 h-5 text-blue-600 mt-1" />
+              <div>
+                <p class="text-gray-600">info@concrochet.com</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <Clock className="w-5 h-5 text-blue-600 mt-1" />
+              <div>
+                <p class="text-gray-600">Lun - Vie: 9:00 - 18:00</p>
+                <p class="text-gray-600">Sáb: 10:00 - 14:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="border-t border-gray-200 py-8">
+      <div class="text-center">
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">¡Suscríbete a nuestro newsletter!</h4>
+        <p class="text-gray-600 mb-6">Recibe las últimas novedades, patrones gratuitos y ofertas especiales</p>
+        <div class="max-w-md mx-auto flex">
+          <input 
+            type="email" 
+            placeholder="Tu email aquí..."
+            class="flex-1 px-4 py-3 rounded-l-lg bg-white text-gray-900 placeholder-gray-500 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+          <button class="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors duration-300 font-semibold">
+            Suscribirse
           </button>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
-
-<div class="mn-5 mt-[10%]">
-  <div>
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="mb-3 !text-5xl !font-bold">Product Features</h2>
-      <p class="mb-5 text-gray-600 !text-xl m-[5%] lg-!m-0">Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible</p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-[10%]">
-
-      <!-- Left Column -->
-      <div class="lg:max-w-3xl lg:p-[5%] ">
-        <h4 class="mb-3 text-xl font-semibold">Product Description</h4>
-        <p class="mb-5 text-gray-600 px-auto text-xl">
-            rrrrrrrrrrrrrrrrrr has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old.
-        </p>
-
-        <div class="space-y-4">
-          <div class="flex">
-            <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>
-            <p class=" text-gray-600 font-medium  text-xl">Oil is a primary source of energy for various sectors...</p>
-          </div>
-          <div class="flex">
-            <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>            
-            <p class=" text-gray-600 font-semibold  text-xl">Oil is highly versatile and used in the production of a wide range of products...</p>
-          </div>
-          <div class="flex">
-        <svg class="me-2" width="30" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 23C14.4183 23 18 19.4183 18 15C18 10.5817 14.4183 7 10 7C5.58172 7 2 10.5817 2 15C2 19.4183 5.58172 23 10 23ZM13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929C13.3166 11.9024 12.6834 11.9024 12.2929 12.2929L9 15.5858L7.70711 14.2929C7.31658 13.9024 6.68342 13.9024 6.29289 14.2929C5.90237 14.6834 5.90237 15.3166 6.29289 15.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L13.7071 13.7071Z" fill="#111827"></path></svg>            
-        <p class=" text-gray-600 font-semibold  text-xl">Oil is a crucial source of petrochemicals...</p>
-          </div>
+    <!-- Bottom Footer -->
+    <div class="border-t border-gray-200 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-500 text-sm mb-4 md:mb-0">
+          © 2025 Con Crochet. Todos los izquierdos reservados.
+        </div>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">Política de Privacidad</a>
+          <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">Términos de Servicio</a>
+          <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors duration-300">Devoluciones</a>
         </div>
       </div>
-
-      <!-- Right Column (Images) -->
-      <div class="lg:w-3/4 space-y-4">
-        <img class="w-full rounded-xl object-cover" src="https://picsum.photos/seed/picsum/800/400" alt="first_image" />
-        <div class="flex gap-4">
-          <img class="w-1/2 rounded-xl object-cover" src="https://picsum.photos/seed/picsum/200/300" alt="third_image" />
-          <img class="w-1/2 rounded-xl object-cover" src="https://picsum.photos/seed/picsum/200/300" alt="fourth_image" />
-        </div>
     </div>
   </div>
-    </div>
-
-
-    <!-- seccion segunda -->
-<div class="mt-[5%] mb-10">
-      <section class="lg:mx-[10%]">
-        <div class="mx-[10%]   rounded-t-2xl overflow-hidden min-h-[50vh] bg-cover bg-center bg-no-repeat relative" 
-         style="background-image: url('https://images.unsplash.com/photo-1519642918688-7e43b19245d8?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2676&amp;q=80');">
-
-            
-            <div class="absolute inset-0 bg-black/40"></div>
-
-            
-            <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex justify-center items-center min-h-[50vh]">
-                <div class="flex flex-col items-center text-center max-w-3xl">
-                <h1 class="mb-4 font-bold text-3xl sm:text-4xl text-white">Exclusive Discounts for Members</h1>
-                <p class="mb-6 px-4 sm:px-8 text-white font-semibold text-base sm:text-lg">
-                    The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. But the time is now to be okay to be the greatest you.
-                </p>
-                <button class="flex items-center bg-white text-gray-900 text-sm font-semibold px-6 py-3 !rounded-md hover:!bg-gray-200 transition">
-                    <svg class="mr-2" width="15" height="15" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.00002 3.4999C4.00002 2.34011 4.94023 1.3999 6.10002 1.3999C6.63788 1.3999 7.12849 1.6021 7.50002 1.93463C7.87158 1.6021 8.36214 1.3999 8.90002 1.3999C10.0599 1.3999 11 2.34011 11 3.4999C11 3.74535 10.9579 3.98096 10.8805 4.1999H11.7C12.4732 4.1999 13.1 4.8267 13.1 5.5999C13.1 6.3731 12.4732 6.9999 11.7 6.9999H8.20002V6.2999C8.20002 5.91331 7.88663 5.5999 7.50002 5.5999C7.11343 5.5999 6.80002 5.9133 6.80002 6.2999V6.9999H3.30002C2.52683 6.9999 1.90002 6.3731 1.90002 5.5999C1.90002 4.8267 2.52683 4.1999 3.30002 4.1999H4.11952C4.04213 3.98096 4.00002 3.74535 4.00002 3.4999ZM6.80002 4.1999V3.4999C6.80002 3.11331 6.48662 2.7999 6.10002 2.7999C5.71343 2.7999 5.40002 3.11331 5.40002 3.4999C5.40002 3.8865 5.71343 4.1999 6.10002 4.1999H6.80002ZM8.90002 4.1999C9.28663 4.1999 9.60003 3.8865 9.60003 3.4999C9.60003 3.11331 9.28663 2.7999 8.90002 2.7999C8.51341 2.7999 8.20002 3.11331 8.20002 3.4999V4.1999H8.90002Z" fill="black" />
-                    <path d="M6.79998 7.69995H2.59998V11.2C2.59998 11.9732 3.22678 12.6 3.99998 12.6H6.79998V7.69995Z" fill="black" />
-                    <path d="M8.20001 12.6H11C11.7732 12.6 12.4 11.9732 12.4 11.2V7.69995H8.20001V12.6Z" fill="black" />
-                    </svg>
-                    Get your code
-                </button>
-                </div>
-            </div>
-            </div>
-
-
-                <div class="">
-
-
-
-                    <!-- OPINIONES DE LOS CLIENTES  -->
-                    <div class="mx-[10%] max-w-3xl mt-10">
-                        <h3 class="!font-bold mt-4 mb-2 !text-4xl">Our customer’s opinion</h3>
-                    <p class="mb-5  max-w-3xl text-gray-600 !text-[1.2rem]">Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out.</p>
-               
-                     </div>
-               
-                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                        <div class="bg-white p-4 rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <div class="bg-white border shadow-sm mb-4 rounded-lg p-4">
-                               <div class="w-full p-3 text-left">
-                                    <div class="flex items-center">
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> 
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-white w-[1rem] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <p class="mt-4">We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams. If you have the opportunity to play this game of life you need to appreciate every moment.</p>
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-8 rounded-full relative mr-2">
-                                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
-                                        </div>
-                                        <h6 class="mb-0">Alexa Liras</h6>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>
-                            <div class="border shadow-sm mb-4 rounded-lg bg-white">
-                                <div class="w-full p-3 text-left">
-                                <div class="flex items-center">
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <p class="mt-4">There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented at anything except for the ability to learn. That’s what I do. That’s what I’m here for. Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="relative mr-2 w-8 h-8 rounded-full overflow-hidden">
-                                             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
-                                        </div>  
-                                        <h6 class="mb-0">Laurent Perrier</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border rounded shadow-sm mb-4 p-4 bg-white w-full">
-                                <div class="text-left p-3 w-full">
-                                    <div class="flex items-center">
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"> 
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-yellow-500 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                        <svg class="text-white w-[1rem] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <p class="mt-4">It really matters and then like it really doesn’t matter. What matters is the people who are sparked by it. And the people who are like offended by it, it doesn’t matter. Because it's about motivating the doers. Because I’m here to follow my dreams and inspire other people to follow their dreams.</p>
-                                    <div class="flex items-center">
-                                        <div class="relative mr-2 w-8 h-8 rounded-full overflow-hidden">
-                                             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1760&amp;q=80" class="rounded-full">
-                                        </div>
-                                        <h6 class="mb-0">Michael Levi</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     
-                </div>
-            </section>
-    </div>
-    
-</div>
-
-
-</div>
-
-
-
+</footer>
