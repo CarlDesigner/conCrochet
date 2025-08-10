@@ -43,7 +43,7 @@ const Navbar = () => {
             </a>
             
             <a 
-              href="/products" 
+              href="#" 
               className="text-gray-700 hover:text-blue-600 no-underline font-medium transition-colors duration-200"
             >
               Productos
@@ -74,7 +74,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="/products?category=animals"
+                    href="#?category=animals"
                   >
                     <span className="mr-3">🐾</span>
                     Animalitos
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="/products?category=plants"
+                    href="#?category=plants"
                   >
                     <span className="mr-3">🌱</span>
                     Plantitas
@@ -92,7 +92,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="/products?category=fantasy"
+                    href="#?category=fantasy"
                   >
                     <span className="mr-3">✨</span>
                     Anime y Fantasía ✨
@@ -101,7 +101,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="/products?category=food"
+                    href="#?category=food"
                   >
                     <span className="mr-3">🎁</span>
                     Descuentitos
@@ -111,14 +111,14 @@ const Navbar = () => {
             </div>
 
             <a
-              href="/about"
+              href="#"
               className="text-gray-700 hover:text-blue-600 no-underline font-medium transition-colors duration-200"
             >
               Nosotros
             </a>
             
             <a
-              href="/contact"
+              href="#"
               className="text-gray-700 hover:text-blue-600 no-underline font-medium transition-colors duration-200"
             >
               Contacto
@@ -193,7 +193,7 @@ const Navbar = () => {
               Inicio
             </a>
             <a 
-              href="/products" 
+              href="#" 
               className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 no-underline font-medium rounded-lg transition-colors duration-200"
             >
               Productos
@@ -205,28 +205,28 @@ const Navbar = () => {
               <div className="space-y-1 ml-4">
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="/products?category=animals"
+                  href="#?category=animals"
                 >
                   <span className="mr-3">🐾</span>
                   Animales
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="/products?category=plants"
+                  href="#?category=plants"
                 >
                   <span className="mr-3">🌱</span>
                   Plantas
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="/products?category=fantasy"
+                  href="#?category=fantasy"
                 >
                   <span className="mr-3">✨</span>
                   Fantasía
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="/products?category=food"
+                  href="#?category=food"
                 >
                   <span className="mr-3">🍎</span>
                   Comida
@@ -235,13 +235,13 @@ const Navbar = () => {
             </div>
 
             <a
-              href="/about"
+              href="#"
               className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 no-underline font-medium rounded-lg transition-colors duration-200"
             >
               Nosotros
             </a>
             <a
-              href="/contact"
+              href="#"
               className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 no-underline font-medium rounded-lg transition-colors duration-200"
             >
               Contacto
