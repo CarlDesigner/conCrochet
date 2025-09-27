@@ -2,11 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.tsx'; 
 import Collection from '../components/Collection.astro'
-import '../styles/global.css'; 
 ---
 
-<Layout>
+<Layout title="ConCrochet - Amigurumis Hechos a Mano">
   <Navbar client:load />
   <Collection />
-  <h1 class="text-red-300">Hola mundo!</h1>
 </Layout>

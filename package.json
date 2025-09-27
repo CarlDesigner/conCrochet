@@ -15,8 +15,10 @@
     "@types/react-dom": "^19.1.6",
     "astro": "^5.12.0",
     "bootstrap": "^5.3.7",
+    "lucide-react": "^0.539.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.11"
-  }
+  },
+  "packageManager": "pnpm@9.1.2+sha1.907f57a52517de34399d66401bf220a549e47b57"
 }
