@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClientNavbar from '../../components/ClientNavbar.tsx';
+import ProductDetailPage from '../../components/ProductDetailPage.tsx';
+import { mockProducts } from '../../data/products';
+
+export function getStaticPaths() {
+  return mockProducts.map(product => ({
+    params: { id: product.id }
+  }));
+}
+
+const { id } = Astro.params;
+console.log('ID recibido en la página:', id, 'tipo:', typeof id);
+const product = mockProducts.find(p => p.id === id);
+console.log('Producto encontrado en página:', product);
+
+if (!product) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${product.name} - ConCrochet`}>
+  <ClientNavbar client:load />
+  <ProductDetailPage productId={id} client:load />
+</Layout>

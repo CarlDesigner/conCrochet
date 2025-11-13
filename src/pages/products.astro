@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClientNavbar from '../components/ClientNavbar.tsx';
+import ProductsPage from '../components/ProductsPage.tsx';
+---
+
+<Layout title="Productos - ConCrochet | Amigurumis Hechos a Mano">
+  <ClientNavbar client:load />
+  <ProductsPage client:load />
+</Layout>

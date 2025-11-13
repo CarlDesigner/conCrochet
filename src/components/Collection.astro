@@ -42,41 +42,49 @@ export interface Props {}
 
       <!-- Categories Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('/cat1.webp');">
-          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
-          <div class="relative z-10 text-center">
-            <p class="text-white font-bold mb-1">Nuevos</p>
-            <h3 class="text-white font-extrabold text-xl">Animalitos 🐻</h3>
-            <a href="#?category=animals" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
-          </div>
-        </article>
+        <a href="/products?category=Animales" class="block">
+          <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300 cursor-pointer" style="background-image: url('/cat1.webp');">
+            <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+            <div class="relative z-10 text-center">
+              <p class="text-white font-bold mb-1">Nuevos</p>
+              <h3 class="text-white font-extrabold text-xl">Animalitos 🐻</h3>
+              <span class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</span>
+            </div>
+          </article>
+        </a>
 
-        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('/cat2.webp');">
-          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
-          <div class="relative z-10 text-center">
-            <p class="text-white font-bold mb-1">Populares</p>
-            <h3 class="text-white font-extrabold text-xl">Plantitas 🌵</h3>
-            <a href="#?category=plants" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
-          </div>
-        </article>
+        <a href="/products?category=Plantas" class="block">
+          <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300 cursor-pointer" style="background-image: url('/cat2.webp');">
+            <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+            <div class="relative z-10 text-center">
+              <p class="text-white font-bold mb-1">Populares</p>
+              <h3 class="text-white font-extrabold text-xl">Plantitas 🌵</h3>
+              <span class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</span>
+            </div>
+          </article>
+        </a>
 
-        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('/cat3.webp');">
-          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
-          <div class="relative z-10 text-center">
-            <p class="text-white font-bold mb-1">Especiales</p>
-            <h3 class="text-white font-extrabold text-xl">Anime y Fantasía ✨</h3>
-            <a href="#?category=fantasy" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
-          </div>
-        </article>
+        <a href="/products?category=Fantasía" class="block">
+          <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300 cursor-pointer" style="background-image: url('/cat3.webp');">
+            <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+            <div class="relative z-10 text-center">
+              <p class="text-white font-bold mb-1">Especiales</p>
+              <h3 class="text-white font-extrabold text-xl">Anime y Fantasía ✨</h3>
+              <span class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</span>
+            </div>
+          </article>
+        </a>
 
-        <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300" style="background-image: url('/cat4.webp');">
-          <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
-          <div class="relative z-10 text-center">
-            <p class="text-white font-bold mb-1">Ofertas</p>
-            <h3 class="text-white font-extrabold text-xl">Descuentitos 🎁</h3>
-            <a href="#?discount=true" class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</a>
-          </div>
-        </article>
+        <a href="/products?discount=true" class="block">
+          <article class="relative bg-cover bg-center rounded-lg flex flex-col items-center justify-end h-80 p-6 group hover:scale-105 transition-transform duration-300 cursor-pointer" style="background-image: url('/cat4.webp');">
+            <div class="absolute inset-0 bg-black/20 rounded-lg group-hover:bg-black/50 transition-colors duration-300"></div>
+            <div class="relative z-10 text-center">
+              <p class="text-white font-bold mb-1">Ofertas</p>
+              <h3 class="text-white font-extrabold text-xl">Descuentitos 🎁</h3>
+              <span class="text-white text-sm font-medium mt-2 hover:underline inline-block">Ver productos</span>
+            </div>
+          </article>
+        </a>
       </div>
 
       <!-- Featured Collection Banner -->
