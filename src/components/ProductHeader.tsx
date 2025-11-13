@@ -20,7 +20,7 @@ export default function ProductHeader({
     <div className="flex items-center justify-between mb-6 bg-white p-4 rounded-lg shadow-sm">
       {/* Views Controls */}
       <div className="flex items-center space-x-4">
-        <span className="text-gray-700 font-medium">Views</span>
+        <span className="text-gray-700 font-medium">Vista</span>
         <div className="flex items-center space-x-2">
           <button
             onClick={() => onViewModeChange('grid')}
@@ -58,7 +58,7 @@ export default function ProductHeader({
 
       {/* Sort By */}
       <div className="flex items-center space-x-4">
-        <span className="text-gray-700 font-medium">Sort By</span>
+        <span className="text-gray-700 font-medium">Filtrar por</span>
         <select
           value={sortBy}
           onChange={(e) => onSortByChange(e.target.value as SortBy)}

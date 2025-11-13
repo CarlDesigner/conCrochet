@@ -11,6 +11,86 @@ body {
   color: #111827;
 }
 
+/* Estilos para el range slider doble mejorado */
+input[type="range"].range-slider-min,
+input[type="range"].range-slider-max {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="range"].range-slider-min::-webkit-slider-track,
+input[type="range"].range-slider-max::-webkit-slider-track {
+  background: transparent;
+  height: 2px;
+  border: none;
+  outline: none;
+}
+
+input[type="range"].range-slider-min::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"].range-slider-max::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"].range-slider-min::-webkit-slider-thumb:hover,
+input[type="range"].range-slider-max::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox */
+input[type="range"].range-slider-min::-moz-range-track,
+input[type="range"].range-slider-max::-moz-range-track {
+  background: transparent;
+  height: 2px;
+  border: none;
+}
+
+input[type="range"].range-slider-min::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+input[type="range"].range-slider-max::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
 /* Estilos del Navbar */
 nav {
   position: fixed;

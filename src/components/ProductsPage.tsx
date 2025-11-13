@@ -1,21 +1,58 @@
-import React, { useState, useMemo } from 'react';
-import Navbar from './Navbar';
+import React, { useState, useMemo, useEffect } from 'react';
 import ProductFilters from './ProductFilters';
 import ProductHeader from './ProductHeader';
 import ProductGrid from './ProductGrid';
 import ProductList from './ProductList';
-import { mockProducts, categories, brands } from '../data/products';
+import { mockProducts, categories, brands, tags } from '../data/products';
 import type { FilterState, ViewMode, SortBy, Product } from '../types/product';
 
 export default function ProductsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [sortBy, setSortBy] = useState<SortBy>('relevance');
+  
+  // Calcular el precio máximo automáticamente
+  const maxPrice = useMemo(() => {
+    return Math.max(...mockProducts.map(product => product.price));
+  }, []);
+  
   const [filters, setFilters] = useState<FilterState>({
-    priceRange: { min: 0, max: 50000 },
+    priceRange: { min: 0, max: 100000 }, // Temporal, se actualizará abajo
     selectedCategories: [],
     selectedBrands: [],
     selectedTags: []
   });
+
+  // Leer parámetro de categoría desde la URL (solo en el cliente)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryFromUrl = urlParams.get('category');
+      const discountFromUrl = urlParams.get('discount');
+      
+      if (categoryFromUrl) {
+        setFilters(prev => ({
+          ...prev,
+          selectedCategories: [categoryFromUrl]
+        }));
+      }
+      
+      if (discountFromUrl === 'true') {
+        // Aplicar filtro de descuentos - esto se manejará en el filtrado de productos
+        setFilters(prev => ({
+          ...prev,
+          showDiscountsOnly: true
+        }));
+      }
+    }
+  }, []);
+
+  // Actualizar el filtro cuando se calcule el maxPrice
+  useEffect(() => {
+    setFilters(prev => ({
+      ...prev,
+      priceRange: { min: 0, max: maxPrice }
+    }));
+  }, [maxPrice]);
 
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
@@ -32,7 +69,17 @@ export default function ProductsPage() {
       const brandMatch = filters.selectedBrands.length === 0 || 
                         filters.selectedBrands.includes(product.brand);
       
-      return priceInRange && categoryMatch && brandMatch;
+      // Tag filter
+      const tagMatch = filters.selectedTags.length === 0 ||
+                      filters.selectedTags.some(selectedTag => 
+                        product.tags?.includes(selectedTag)
+                      );
+      
+      // Discount filter - solo productos con originalPrice (en oferta)
+      const discountMatch = !filters.showDiscountsOnly || 
+                           (product.originalPrice && product.originalPrice > product.price);
+      
+      return priceInRange && categoryMatch && brandMatch && tagMatch && discountMatch;
     });
 
     // Sort products
@@ -57,15 +104,15 @@ export default function ProductsPage() {
   }, [filters, sortBy]);
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-20">
-        <div className="max-w-7xl mx-auto flex">
+    <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="max-w-7xl mx-auto flex">
           {/* Sidebar Filters */}
           <ProductFilters
             filters={filters}
             categories={categories}
             brands={brands}
+            tags={tags}
+            maxPrice={maxPrice}
             onFiltersChange={setFilters}
           />
           
@@ -85,9 +132,8 @@ export default function ProductsPage() {
             ) : (
               <ProductList products={filteredAndSortedProducts} />
             )}
-          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Product } from '../types/product';
+import { preferCld } from '../utils/cloudinary';
 
 interface ProductListProps {
   products: Product[];
@@ -13,12 +14,22 @@ function ProductListItem({ product }: { product: Product }) {
       <div className="flex">
         {/* Product Image */}
         <div className="relative w-48 h-48 flex-shrink-0 overflow-hidden bg-gray-100">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+          {(() => {
+            const img = preferCld(product.image, product.imagePublicId, {
+              fallbackWidth: 400,
+              sizes: '(min-width: 768px) 12rem, 50vw'
+            });
+            return (
+              <img
+                src={img.src}
+                srcSet={img.srcSet}
+                sizes={img.sizes}
+                alt={product.name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            );
+          })()}
           {hasDiscount && (
             <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
               OFERTA

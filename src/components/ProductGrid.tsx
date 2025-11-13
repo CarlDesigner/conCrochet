@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Product } from '../types/product';
+import { preferCld } from '../utils/cloudinary';
 
 interface ProductCardProps {
   product: Product;
@@ -9,47 +10,60 @@ function ProductCard({ product }: ProductCardProps) {
   const hasDiscount = product.originalPrice && product.originalPrice > product.price;
   
   return (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
-      {/* Product Image */}
-      <div className="relative aspect-square overflow-hidden bg-gray-100">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
-          loading="lazy"
-        />
-        {hasDiscount && (
-          <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-            OFERTA
-          </div>
-        )}
-      </div>
-      
-      {/* Product Info */}
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{product.name}</h3>
-        
-        {/* Price */}
-        <div className="flex items-center space-x-2 mb-2">
-          <span className="text-lg font-bold text-gray-900">
-            $ {product.price.toLocaleString()} COP
-          </span>
+    <a href={`/product/${product.id}`} className="block">
+      <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group cursor-pointer">
+        {/* Product Image */}
+        <div className="relative aspect-square overflow-hidden bg-gray-100">
+          {(() => {
+            const img = preferCld(product.image, product.imagePublicId, {
+              fallbackWidth: 600,
+              sizes:
+                '(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw',
+            });
+            return (
+              <img
+                src={img.src}
+                srcSet={img.srcSet}
+                sizes={img.sizes}
+                alt={product.name}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                loading="lazy"
+              />
+            );
+          })()}
           {hasDiscount && (
-            <span className="text-sm text-gray-500 line-through">
-              $ {product.originalPrice?.toLocaleString()} COP
-            </span>
+            <div className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+              OFERTA
+            </div>
           )}
         </div>
         
-        {/* Brand */}
-        <p className="text-sm text-gray-600 mb-3">{product.brand}</p>
-        
-        {/* Add to Cart Button */}
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200 font-medium">
-          Agregar al Carrito
-        </button>
+        {/* Product Info */}
+        <div className="p-4">
+          <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">{product.name}</h3>
+          
+          {/* Price */}
+          <div className="flex items-center space-x-2 mb-2">
+            <span className="text-lg font-bold text-gray-900">
+              $ {product.price.toLocaleString()} COP
+            </span>
+            {hasDiscount && (
+              <span className="text-sm text-gray-500 line-through">
+                $ {product.originalPrice?.toLocaleString()} COP
+              </span>
+            )}
+          </div>
+          
+          {/* Brand */}
+          <p className="text-sm text-gray-600 mb-3">{product.brand}</p>
+          
+          {/* View Details Button */}
+          <div className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200 font-medium text-center">
+            Ver Detalles
+          </div>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
