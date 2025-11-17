@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 shadow-sm z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-100 shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -255,16 +255,17 @@ const Navbar = () => {
               Contacto
             </a>
 
-            {/* Mobile Cart */}
-            <div className="px-4 pt-4 border-t border-gray-100">
+             <div className="px-4 pt-4 border-t border-gray-100">
               <a
                 href="/cart"
                 className="flex items-center justify-center w-full text-white bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg font-medium transition-colors duration-200"
               >
+
+            {/* aca cambiar el 0 a que muestre los productos del carrito */}
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5L21 18M7 13v8a2 2 0 002 2h8a2 2 0 002-2v-8" />
                 </svg>
-                Carrito (0)
+                 Carrito (0)
               </a>
             </div>
           </div>
