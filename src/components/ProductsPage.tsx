@@ -9,8 +9,7 @@ import type { FilterState, ViewMode, SortBy, Product } from '../types/product';
 export default function ProductsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [sortBy, setSortBy] = useState<SortBy>('relevance');
-  
-  // Calcular el precio máximo automáticamente
+   // Calcular el precio máximo automáticamente
   const maxPrice = useMemo(() => {
     return Math.max(...mockProducts.map(product => product.price));
   }, []);

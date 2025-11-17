@@ -3,17 +3,21 @@ import { useCart } from '../contexts/CartContext';
 import { mockProducts } from '../data/products';
 import { preferCld } from '../utils/cloudinary';
 import type { Product } from '../types/product';
-
+import {Carrito} from '../store/State';
 interface ProductDetailProps {
   productId: string;
 }
 
+
+//Esta pasando el id como prop, la idea seria usar el array de productos del estado global para renderizar el producto
 export default function ProductDetail({ productId }: ProductDetailProps) {
+
+ 
   console.log('ProductDetail recibió productId:', productId);
   const { addItem } = useCart();
   const product = mockProducts.find(p => p.id === productId);
   console.log('Producto encontrado:', product);
-
+  const aumentarCantidad = Carrito((state)=> state.aumentarCantidad)
   if (!product) {
     console.log('Producto no encontrado para ID:', productId);
     return (
@@ -33,9 +37,42 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
     .filter(p => p.id !== product.id && p.category === product.category)
     .slice(0, 4);
 
+
+    const agregarProductoAlCarrito = Carrito((state) => state.agregarProducto);
+    const productoss = Carrito((state) => state.productos);
+//
+//PROBB
   const handleAddToCart = () => {
-    addItem(product);
-    // Opcional: mostrar notificación de éxito
+    
+ 
+    let objeto = {
+      id: product.id,
+      cantidad: 1,
+      precio: product.price,
+      category: product.category,
+      name:  product.name,
+      image: product.image,
+      ImagePublicId: product.imagePublicId,
+      originalPrice: product.originalPrice,
+      tags: product.tags,
+      description: product.description,
+
+    }
+
+    const existe = productoss.find((item) => item.id === objeto.id);
+    //ya volveremos acá
+    //seguro quitaré esto porque igual se están sumando
+if (!existe) {
+  // NO está en el carrito → lo agregas
+  agregarProductoAlCarrito(objeto);
+  console.log(`Producto ${product.id} agregado al carrito.`);
+  return;
+} else {
+ aumentarCantidad(product.id)
+
+  return;
+}
+
   };
 
   return (
@@ -142,6 +179,8 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
                 </div>
               </div>
 
+
+                    {/* aca debe agregarse la funcion para agregar al carrito */}
               {/* Action Buttons */}
               <div className="space-y-4">
                 <button 

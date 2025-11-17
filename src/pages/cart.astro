@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClientNavbar from '../components/ClientNavbar.tsx';
+import ShoppingCart from '../components/ShoppingCar'
+--- 
+
+
+<Layout title="ConCrochet | Carrito" >
+      <ClientNavbar client:load />
+
+    <ShoppingCart client:load/>
+
+</Layout>
