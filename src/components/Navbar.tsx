@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useCart } from "../contexts/CartContext";
 
+
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { state } = useCart();

@@ -60,10 +60,7 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
     }
 
     const existe = productoss.find((item) => item.id === objeto.id);
-    //ya volveremos acá
-    //seguro quitaré esto porque igual se están sumando
-if (!existe) {
-  // NO está en el carrito → lo agregas
+  if (!existe) {
   agregarProductoAlCarrito(objeto);
   console.log(`Producto ${product.id} agregado al carrito.`);
   return;
