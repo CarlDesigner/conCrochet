@@ -1,23 +1,17 @@
 import React from 'react';
-import { useCart } from '../contexts/CartContext';
 import { mockProducts } from '../data/products';
 import { preferCld } from '../utils/cloudinary';
 import type { Product } from '../types/product';
-import {Carrito} from '../store/State';
+import { Carrito } from '../store/State';
 interface ProductDetailProps {
   productId: string;
 }
 
 
-//Esta pasando el id como prop, la idea seria usar el array de productos del estado global para renderizar el producto
 export default function ProductDetail({ productId }: ProductDetailProps) {
-
- 
   console.log('ProductDetail recibió productId:', productId);
-  const { addItem } = useCart();
   const product = mockProducts.find(p => p.id === productId);
   console.log('Producto encontrado:', product);
-  const aumentarCantidad = Carrito((state)=> state.aumentarCantidad)
   if (!product) {
     console.log('Producto no encontrado para ID:', productId);
     return (
@@ -38,41 +32,24 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
     .slice(0, 4);
 
 
-    const agregarProductoAlCarrito = Carrito((state) => state.agregarProducto);
-    const productoss = Carrito((state) => state.productos);
-//
-//PROBB
+  const agregarProductoAlCarrito = Carrito((state) => state.agregarProducto);
+
   const handleAddToCart = () => {
-    
- 
-    let objeto = {
+    const objeto = {
       id: product.id,
       cantidad: 1,
       precio: product.price,
       category: product.category,
-      name:  product.name,
+      name: product.name,
       image: product.image,
       ImagePublicId: product.imagePublicId,
       originalPrice: product.originalPrice,
       tags: product.tags,
       description: product.description,
+    };
 
-    }
-
-    const existe = productoss.find((item) => item.id === objeto.id);
-    //ya volveremos acá
-    //seguro quitaré esto porque igual se están sumando
-if (!existe) {
-  // NO está en el carrito → lo agregas
-  agregarProductoAlCarrito(objeto);
-  console.log(`Producto ${product.id} agregado al carrito.`);
-  return;
-} else {
- aumentarCantidad(product.id)
-
-  return;
-}
-
+    agregarProductoAlCarrito(objeto);
+    console.log(`Producto ${product.name} agregado al carrito.`);
   };
 
   return (
@@ -185,7 +162,7 @@ if (!existe) {
               <div className="space-y-4">
                 <button 
                   onClick={handleAddToCart}
-                  className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg flex items-center justify-center gap-3"
+                  className="w-full bg-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg flex items-center justify-center gap-3 cursor-pointer"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shopping-cart">
                     <circle cx="8" cy="21" r="1"/>
@@ -194,22 +171,6 @@ if (!existe) {
                   </svg>
                   Añadir al carrito
                 </button>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <button className="flex items-center justify-center gap-2 py-3 px-4 border-2 border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                    </svg>
-                    Favoritos
-                  </button>
-                  
-                  <button className="flex items-center justify-center gap-2 py-3 px-4 border-2 border-gray-300 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
-                    </svg>
-                    Compartir
-                  </button>
-                </div>
               </div>
 
               {/* Product Details */}

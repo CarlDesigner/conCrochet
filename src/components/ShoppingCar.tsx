@@ -10,6 +10,7 @@
 import React, { useState} from "react";
 import { Carrito } from "../store/State";
 import Footer from "./components/Footer";
+import { preferCld } from "../utils/cloudinary";
 
   type ConfirmModalProps = {
     open: boolean;
@@ -82,8 +83,8 @@ const ShoppingCart: React.FC = () => {
   return (
     <main className="min-h-screen bg-white flex flex-col">
        <div className="flex-1">
-        <div className="max-w-6xl mx-auto mt-[25%] md:mt-[15%] lg:mt-[7%] px-4">
-        <h2 className="text-center text-3xl font-semibold mb-3">Shopping Cart</h2>
+        <div className="max-w-7xl mx-auto mt-[25%] md:mt-[15%] lg:mt-[7%] px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center text-3xl font-semibold mb-3">Carrito de Compras</h2>
         <h5 className="text-center text-gray-600 mb-10">
           Precios por unidad del producto
         </h5>
@@ -100,8 +101,13 @@ const ShoppingCart: React.FC = () => {
 
             {carro
               .filter(Boolean)
-              .map((product) => (
-
+              .map((product) => {
+                // Generar imagen de Cloudinary para cada producto
+                const productImage = preferCld(product.image, product.ImagePublicId, { 
+                  fallbackWidth: 400 
+                });
+                
+                return (
                <div
                 key={product !== undefined ?product.id: ''}
                 className="flex flex-col md:flex-row items-start gap-4"
@@ -109,8 +115,11 @@ const ShoppingCart: React.FC = () => {
                 
                  <img
                   className="w-40 rounded"
-                  src={product !== undefined ?product.image: ''}
+                  src={productImage.src}
+                  srcSet={productImage.srcSet}
+                  sizes={productImage.sizes}
                   alt={ product !== undefined ?product.name: ''}
+                  loading="lazy"
                 />
 
                  <div className="flex-1">
@@ -177,10 +186,10 @@ const ShoppingCart: React.FC = () => {
 
               
               </div>
-            ))}
+            )})}
 
-             <button onClick={ () => setMostrarModa(true)} className="bg-red-500 px-3 py-1 rounded-2xl text-white mt-5">
-              Clear all
+             <button onClick={ () => setMostrarModa(true)} className="bg-red-500 px-3 py-1 rounded-2xl text-white mt-5 cursor-pointer">
+              Vaciar Carrito
             </button>
             <ConfirmModal
             open={mostrarModal}
@@ -195,7 +204,7 @@ const ShoppingCart: React.FC = () => {
 
            <div>
             <div className="bg-gray-100 border rounded shadow p-6">
-              <h5 className="text-xl font-semibold mb-4">Order Summary</h5>
+              <h5 className="text-xl font-semibold mb-4">Resumen del pedido</h5>
 
               <ul className="space-y-4">
                 <li className="flex justify-between">

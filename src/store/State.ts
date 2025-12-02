@@ -37,9 +37,24 @@ export const Carrito = create<State>()(
       productos: [],
 
       agregarProducto: (producto) => {
-        set({
-          productos: [...get().productos, producto],
-        });
+        const productos = get().productos;
+        const existente = productos.find(p => p.id === producto.id);
+        
+        if (existente) {
+          // Si el producto ya existe, aumentar su cantidad
+          set({
+            productos: productos.map(p => 
+              p.id === producto.id 
+                ? { ...p, cantidad: p.cantidad + producto.cantidad }
+                : p
+            ),
+          });
+        } else {
+          // Si no existe, agregarlo al carrito
+          set({
+            productos: [...productos, producto],
+          });
+        }
       },
 
       eliminarProducto: (id) => {

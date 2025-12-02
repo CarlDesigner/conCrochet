@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { useCart } from "../contexts/CartContext";
+import { Carrito } from "../store/State";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { state } = useCart();
+  const productos = Carrito((state) => state.productos);
+  
+  // Calcular el total de productos en el carrito
+  const totalItems = productos.reduce((total, producto) => total + producto.cantidad, 0);
 
   const toggleMenu = () => {
     setVisible((prev) => !prev);
@@ -45,7 +48,7 @@ const Navbar = () => {
             </a>
             
             <a 
-              href="#" 
+              href="/products" 
               className="text-gray-700 hover:text-blue-600 no-underline font-medium transition-colors duration-200"
             >
               Productos
@@ -76,7 +79,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="#?category=animals"
+                    href="/products?category=Animales"
                   >
                     <span className="mr-3">🐾</span>
                     Animalitos
@@ -85,7 +88,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="#?category=plants"
+                    href="/products?category=Plantas"
                   >
                     <span className="mr-3">🌱</span>
                     Plantitas
@@ -94,7 +97,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="#?category=fantasy"
+                    href="/products?category=Fantas%C3%ADa"
                   >
                     <span className="mr-3">✨</span>
                     Anime y Fantasía ✨
@@ -103,7 +106,7 @@ const Navbar = () => {
                 <li>
                   <a
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 no-underline transition-colors duration-200"
-                    href="#?category=food"
+                    href="/products?discount=true"
                   >
                     <span className="mr-3">🎁</span>
                     Descuentitos
@@ -147,9 +150,9 @@ const Navbar = () => {
                 <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
               </svg>
               Carrito
-              {state.totalItems > 0 && (
-                <span className="ml-1 bg-blue-800 text-white text-xs px-2 py-1 rounded-full">
-                  {state.totalItems}
+              {totalItems > 0 && (
+                <span className="ml-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                  {totalItems}
                 </span>
               )}
             </a>
@@ -201,7 +204,7 @@ const Navbar = () => {
               Inicio
             </a>
             <a 
-              href="#" 
+              href="/products" 
               className="block px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 no-underline font-medium rounded-lg transition-colors duration-200"
             >
               Productos
@@ -213,28 +216,28 @@ const Navbar = () => {
               <div className="space-y-1 ml-4">
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="#?category=animals"
+                  href="/products?category=Animales"
                 >
                   <span className="mr-3">🐾</span>
                   Animales
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="#?category=plants"
+                  href="/products?category=Plantas"
                 >
                   <span className="mr-3">🌱</span>
                   Plantas
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="#?category=fantasy"
+                  href="/products?category=Fantas%C3%ADa"
                 >
                   <span className="mr-3">✨</span>
                   Fantasía
                 </a>
                 <a
                   className="flex items-center py-2 text-gray-700 hover:text-blue-600 no-underline transition-colors duration-200"
-                  href="#?category=food"
+                  href="/products?category=Comida"
                 >
                   <span className="mr-3">🍎</span>
                   Comida
@@ -261,11 +264,10 @@ const Navbar = () => {
                 className="flex items-center justify-center w-full text-white bg-blue-600 hover:bg-blue-700 px-4 py-3 rounded-lg font-medium transition-colors duration-200"
               >
 
-            {/* aca cambiar el 0 a que muestre los productos del carrito */}
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5L21 18M7 13v8a2 2 0 002 2h8a2 2 0 002-2v-8" />
                 </svg>
-                 Carrito (0)
+                 Carrito ({totalItems})
               </a>
             </div>
           </div>
